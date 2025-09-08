@@ -1,4 +1,4 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,11pt]{article} % standard readable font size
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -15,30 +15,14 @@
 \usepackage[T1]{fontenc}
 \input{glyphtounicode}
 
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-\setlength{\footskip}{4.08003pt}
+% Adjust margins to 0.6 for balance between fit and readability
+\usepackage[margin=0.6in]{geometry}
 
 \urlstyle{same}
 
@@ -47,68 +31,48 @@
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
-\titleformat{\section}{
-  \vspace{-6pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
+% Custom commands with consistent tighter spacing
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-9pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} 
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5.5pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Ryan Kim} \\ \vspace{5pt}
-    \small Vancouver, BC $|$ \href{mailto:ryanmjkim2024@gmail.com}{\underline{ryanmjkim2024@gmail.com}} $|$ 
-    604-616-6803 $|$ 
-    \href{https://linkedin.com/in/ryankim373}{\underline{linkedin.com/in/ryankim373}}
+    \textbf{\LARGE \scshape Ryan Kim} \\ \vspace{3pt}
+    \small Vancouver, BC $|$ \href{mailto:ryanmjkim2024@gmail.com}{\underline{ryanmjkim2024@gmail.com}} $|$ 604-616-6803 $|$ \href{https://linkedin.com/in/ryankim373}{\underline{linkedin.com/in/ryankim373}}
 \end{center}
 
 %-----------EDUCATION-----------
 \section{Education}
-\vspace{2pt}
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of British Columbia}{Vancouver, BC}
@@ -116,80 +80,73 @@
       \resumeItemListStart
         \resumeItem{4.20 GPA $|$ UBC Presidential Scholar}
         \resumeItem{Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming, Linear Algebra, Probability \& Statistics, FPGA Design, Digital Systems}
+        \resumeItem{Co-op Program}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-    \vspace{2pt}
     \resumeSubheading
-    {Systems Engineering Intern}{May 2025 -- Aug 2025}
-    {Paladin Technologies}{Vancouver, BC}
-    \resumeItemListStart
-      \resumeItem{Collaborated with city stakeholders to define requirements for surveillance upgrade; delivered approved KMZ metadata package adopted as standard for 250+ sites}
-      \resumeItem{Developed automation tool reducing data-processing time from hours to seconds (1000x improvement), improving workflow adoption across engineering teams}
-      \resumeItem{Redesigned vendor evaluation into a decision matrix covering 200+ platforms, standardizing product criteria and accelerating sourcing decisions for design team}
-    \resumeItemListEnd
+      {Systems Engineering Intern}{May 2025 -- Aug 2025}
+      {Paladin Technologies}{Vancouver, BC}
+      \resumeItemListStart
+        \resumeItem{Partnered with City stakeholders to translate requirements for a surveillance upgrade into deliverables; shipped approved KMZ metadata package adopted as the standard across \textbf{250+} sites}
+        \resumeItem{Built a Python ETL automation that reduced processing time from hours to seconds (\textbf{~1000x}); improved workflow adoption and data quality across engineering teams}
+        \resumeItem{Redesigned vendor evaluation into a structured decision matrix covering \textbf{200+} platforms, standardizing criteria and accelerating sourcing decisions}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-        {\textbf{Stublu — AI Course-Aligned Study Tool} $|$ \textit{Next.js, React, TypeScript, FastAPI (Python)}}{2025}
-        \resumeItemListStart
-          \resumeItem{Defined product vision and scoped MVP (PRD) to address student learning inefficiencies; prototyped and iterated tool converting syllabi/exams into aligned practice questions}
-          \resumeItem{Conducted market research and user testing to validate features like confidence meter and highlight-to-ask chat; iterated UX with Figma wireframes and feedback loops}
-          \resumeItem{Built AI pipeline (OCR $\rightarrow$ parse $\rightarrow$ embed $\rightarrow$ generate) using Temporal + OpenAI; enforced cost caps and validated $>$95\% gross margin at scale}
-        \resumeItemListEnd
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Stublu — AI Course-Aligned Study Tool} $|$ \textit{Next.js, React, TypeScript, FastAPI (Python)}}{2025}
+      \resumeItemListStart
+        \resumeItem{Defined product vision, roadmap, and success metrics (PRD) to address student learning inefficiencies; prototyped and iterated features that convert syllabi/exams into aligned practice questions}
+        \resumeItem{Conducted user research and usability tests to validate features such as confidence meter and highlight-to-ask chat}
+        \resumeItem{Implemented AI pipeline (OCR $\rightarrow$ parse $\rightarrow$ embed $\rightarrow$ generate) with Temporal + OpenAI; enforced cost caps and validated $>$\textbf{95\%} gross margin at scale}
+      \resumeItemListEnd
 
-      \resumeProjectHeading
-        {\textbf{UBC Workday to Calendar Utility} $|$ \textit{Python, React, TypeScript, Vercel, iCalendar API} $|$ \href{https://ubcworkdaycalendartool.vercel.app/}{\textcolor{blue}{Link}}}{2025}
-        \resumeItemListStart
-          \resumeItem{Created a full-stack web application to automate conversion of university course schedules into iCalendar format to improve student planning efficiency}
-          \resumeItem{Scaled to \textbf{100+ weekly} users with 0\% error rate through a single social media post and word-of-mouth}
-        \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{UBC Workday to Calendar Utility} $|$ \textit{Python, React, TypeScript, Vercel, iCalendar API} $|$ \href{https://ubcworkdaycalendartool.vercel.app/}{\textcolor{blue}{Link}}}{2025}
+      \resumeItemListStart
+        \resumeItem{Identified inefficiency in how students manually managed course schedules; built a full-stack web app to automatically convert schedules into iCalendar format}
+        \resumeItem{Scaled to \textbf{100+ weekly} users with \textbf{0\%} error rate via a single social post and word-of-mouth, validating demand for the solution}
+      \resumeItemListEnd
 
-      \resumeProjectHeading
-        {\textbf{Autonomous Sonar-Sensing Robotic Claw for Underwater Retrieval}}{2025}
-        \resumeItemListStart
-          \resumeItem{Led iterative prototyping of Arduino-powered claw robot; optimized sonar-based detection and control logic to achieve top competition score under time constraints}
-        \resumeItemListEnd
-
-      \resumeProjectHeading
-        {\textbf{VEX V5 Robotics Engineer}}{2020 -- 2024}
-        \resumeItemListStart
-          \resumeItem{Designed and iterated competitive robots (C++, PID, odometry); led redesign boosting autonomous scoring by 440\%}
-        \resumeItemListEnd
-    \resumeSubHeadingListEnd
+    \resumeProjectHeading
+      {\textbf{VEX V5 Robotics Engineer}}{2020 -- 2024}
+      \resumeItemListStart
+        \resumeItem{Designed and iterated competitive robots (C++, PID, odometry); led redesign and testing that boosted autonomous scoring in tournaments by \textbf{440\%}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
   \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Python, C/C++, Java, HTML5, Verilog} \\
-     \textbf{Tools \& Technologies}{: Figma, Adobe Premiere Pro, Ableton Live, MATLAB, Git, Quartus, Microsoft Office, Bluebeam Revu}
-    }}
+    \small{\item{\textbf{Languages}{: Python, C/C++, Java, HTML5, Verilog} \\
+    \textbf{Product}{: PRDs, Roadmapping, User Research, Metrics/Instrumentation, Experimentation Planning} \\
+    \textbf{Tools \& Platforms}{: Figma, Git, MATLAB, Quartus}}}
   \end{itemize}
 
-%-----------LEADERSHIP & ACTIVITIES-----------
+%-----------LEADERSHIP \& ACTIVITIES-----------
 \section{Leadership \& Activities}
   \resumeSubHeadingListStart
     \resumeSubheading
       {Founder \& President}{2020 -- 2024}
       {Keys For Seniors}{}
       \resumeItemListStart
-        \resumeItem{Founded and grew youth music volunteer group delivering 4+ years of community impact; managed partnerships, event logistics, and team operations}
-        \resumeItem{Coordinated performances and designed programs using Figma; built organizational presence through social media outreach}
+        \resumeItem{Founded and scaled youth music volunteer group delivering 4+ years of community impact; led partnerships, event logistics, and team operations}
+        \resumeItem{Coordinated performances and designed accessible programs using Figma; built organizational presence through social media}
       \resumeItemListEnd
 
     \resumeSubheading
       {Junior Instructor}{2024}
       {UBC Geering Up STEM Outreach}{}
       \resumeItemListStart
-        \resumeItem{Designed and tested STEM curriculum (robotics, physics, biology) for 20+ K-12 students; iterated content delivery based on feedback}
-        \resumeItem{Mentored students in problem-solving methodologies and critical thinking, fostering curiosity and engagement}
+        \resumeItem{Designed and tested STEM curriculum (robotics, physics, biology) for 20+ K–12 students; iterated delivery based on feedback}
+        \resumeItem{Mentored students in problem-solving methodologies and critical thinking}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
